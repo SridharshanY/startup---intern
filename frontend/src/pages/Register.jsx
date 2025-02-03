@@ -12,10 +12,10 @@ const Register = () => {
     e.preventDefault();
     try {
       const req = await axios.post('http://localhost:3000/api/user', value) 
-      console.log(req.data)
+      alert(req.data)
     }
     catch(error){
-      console.log(error.message)
+      alert(error.response.data)
     }
   };
 

@@ -6,12 +6,12 @@ const router = express.Router()
 router.post('/', async (req, res) => {
     try{
         if(!req.body.name || !req.body.email || !req.body.password){
-            return res.status(400).send({message: 'Please fill all the fields'})
+            return res.status(400).json({message: 'Please fill all the fields'})
         }
         const email = req.body.email
         const existingUser = await User.findOne({ email })
         if(existingUser){
-            return res.status(400).send({message: 'User already exists, Please Sign In'})
+            return res.status(400).json({message: 'User already exists, Please Sign In'})
         }
         const user = new User({
             name: req.body.name,
