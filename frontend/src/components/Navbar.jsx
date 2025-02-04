@@ -23,6 +23,10 @@ const Navbar = () => {
                 <li>
                     <NavLink className={({isActive})=>(isActive? 'text-yellow-300': '')} to='/register'>Register</NavLink>
                 </li>
+                <li>
+                    <NavLink className={({isActive})=>(isActive? 'text-yellow-300': '')} to='/view'>View</NavLink>
+                </li>
+
             </ul>
         </div>
         <div className='flex gap-4'>

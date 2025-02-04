@@ -4,6 +4,7 @@ import About from './pages/About'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Navbar from './components/Navbar'
+import View from './pages/View'
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,17 @@ const router = createBrowserRouter([
         <Register />
       </>
     )
+  },
+  {
+    path: '/view',
+    element: (
+      <>
+        <Navbar />
+        <View />
+      </>
+    )
   }
+
 ])
 
 const App = () => {

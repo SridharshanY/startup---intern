@@ -26,4 +26,19 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.get('/', async (req, res) => {
+    const { email, password } = req.body
+    res.send(email)
+})
+
+router.get('/view', async (req, res) => {
+    const users = await User.find({})
+    return (
+        res.status(201).json({
+            count: users.length,
+            data: users
+        })
+    )
+})
+
 export default router
